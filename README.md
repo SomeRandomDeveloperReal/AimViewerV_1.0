@@ -9,6 +9,8 @@ Aim Viewer
 <p align="center">
 <a href= "https://github.com/SomeRandomDeveloperReal/AimViewerV_1.0"><img alt="Static Badge" src="https://img.shields.io/badge/LISENCE-UNLISENCED-red?style=for-the-badge&logo=github">
 <a href= "https://github.com/SomeRandomDeveloperReal/AimViewerV_1.0"><img alt="Static Badge" src="https://img.shields.io/badge/Script%20Version-1.0.0-green?style=for-the-badge">
+<a href="hytps://github.com/SomeRandomDeveloperReal/AimViewerV_1.0"><img alt="Static Badge" src="https://img.shields.io/badge/Unavailable-red?style=for-the-badge&labelColor=red">
+
 </a>
 
 </p>
