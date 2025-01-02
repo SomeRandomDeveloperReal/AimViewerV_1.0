@@ -3,13 +3,9 @@
 Aim Viewer
 </h1>
 
-<h2 align="center">
-<font color="red">The Aim Viewer is not complete.</font></h2>
 
 <p align="center">
-<a href= "https://github.com/SomeRandomDeveloperReal/AimViewerV_1.0"><img alt="Static Badge" src="https://img.shields.io/badge/LISENCE-UNLISENCED-red?style=for-the-badge&logo=github">
 <a href= "https://github.com/SomeRandomDeveloperReal/AimViewerV_1.0"><img alt="Static Badge" src="https://img.shields.io/badge/Script%20Version-1.0.0-green?style=for-the-badge">
-<a href="hytps://github.com/SomeRandomDeveloperReal/AimViewerV_1.0"><img alt="Static Badge" src="https://img.shields.io/badge/Unavailable-red?style=for-the-badge&labelColor=red">
 
 </a>
 
@@ -25,22 +21,10 @@ HOW TO SET UP
 </h1>
 
 <p align-"center">
-1. Download the file
+Copy the following loadstring into your executor/LocalScript: loadstring(game:HttpGet('https://raw.githubusercontent.com/SomeRandomDeveloperReal/AimViewerV_1.0/main/AimViwerV_1.0.lua'))()
+
 </p>
-<p align-"center">
-2. Run through an executor
-</p>
-<p align-"center">
-  a. TrackAll
-</p>
-<p align-"center">
-True; Tracks all players aim beides yours.
-</p>
-<p align-"center">
-b. Player Target
-</p>
-<p align-"center">
-Enter a players usernme to track only them (CASE SENITIVE
+<p align="left'>
 </p>
 
 <h1 align="center">
