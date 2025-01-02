@@ -10,17 +10,12 @@ local SelectPerson
 local OnePlrStat
 local AllPlrStat
 local UI
-local ESPBillboardUI
-local ESPToggleButton
-local ESPstat
-
-
 
 
 local KillSwitch = false -- Deletes all beams
 local targetUsername = "TargetPlayerName" -- Replace with the desired username  (CASE SENSITIVE)
 local trackAll = false -- Bypasses TargetUsername and adds targeting for all users (besides you)
-local ESP = false
+
 
 
 
@@ -112,62 +107,6 @@ local function startUp()
 	keybindReminder.Position = UDim2.new(0.233, 0, 0.921, 0)
 	keybindReminder.Size = UDim2.new(0.448, 0, 0.077, 0)
 	keybindReminder.Text = "Press [M] to Open/Close the Menu"
-	local ESPStatus = Instance.new("TextLabel")
-	ESPStatus.TextColor3 = Color3.new(1, 1, 1)
-	ESPStatus.Name = "ESPStatus"
-	ESPStatus.Position = UDim2.new(0.127, 0, 0.82, 0)
-	ESPStatus.Size = UDim2.new(0.339, 0, 0.071, 0)
-	ESPStatus.Text = "Disabled"
-	local ESPButton = Instance.new("TextButton")
-	ESPButton.TextColor3 = Color3.new(1, 1, 1)
-	ESPButton.Name = "ESPButton"
-	ESPButton.Position = UDim2.new(0.576, 0, 0.823, 0)
-	ESPButton.Size = UDim2.new(0.323, 0, 0.074, 0)
-	ESPButton.Text = "Toggle ESP"
-	ESPToggleButton = ESPButton
-	local ESPUI = Instance.new("BillboardGui")
-	ESPUI.Size = UDim2.new(4, 0, 6, 0)
-	ESPUI.Name = "ESPBillboardUi"
-	local ESPFrame = Instance.new("Frame")
-	ESPUI.ResetOnSpawn = false
-	local ESPF1  = ESPFrame:Clone()
-	local ESPF2  = ESPFrame:Clone()
-	local ESPF3  = ESPFrame:Clone()
-	local ESPF4  = ESPFrame:Clone()
-	ESPF1.Parent = ESPUI
-	ESPF2.Parent = ESPUI
-	ESPF3.Parent = ESPUI
-	ESPF4.Parent = ESPUI
-	ESPF1.Position = UDim2.new(0, 0, 0, 0)
-	ESPF1.Size = UDim2.new(0.05, 0, 1, 0)
-	ESPF2.Position = UDim2.new(0.95, 0, 0, 0)
-	ESPF2.Size = UDim2.new(0.05, 0, 1, 0)
-	ESPF3.Position = UDim2.new(0, 0, 0.99, 0)
-	ESPF3.Size = UDim2.new(1, 0, 0.03, 0)
-	ESPF4.Position = UDim2.new(0, 0, 0, 0)
-	ESPF4.Size = UDim2.new(1, 0, 0.03, 0)
-	local PlayerNameESP = Instance.new("TextLabel")
-	PlayerNameESP.Name = "Username"
-	PlayerNameESP.BackgroundTransparency = 1
-	PlayerNameESP.TextColor3 = Color3.new(1, 1, 1)
-	PlayerNameESP.Position = UDim2.new(0, 0, 0, 0)
-	PlayerNameESP.Size = UDim2.new(1, 0, 0.2, 0)
-	PlayerNameESP.AutomaticSize = Enum.AutomaticSize.None
-	PlayerNameESP.BackgroundTransparency = 1
-	PlayerNameESP.MaxVisibleGraphemes = 200
-	PlayerNameESP.LayoutOrder = 0
-	PlayerNameESP.SizeConstraint = Enum.SizeConstraint.RelativeXY
-	PlayerNameESP.Parent = ESPUI
-	for i,AllFrames in pairs(ESPUI:GetChildren()) do
-		if AllFrames:IsA("Frame") then
-			AllFrames.AutomaticSize = Enum.AutomaticSize.None
-			AllFrames.BackgroundColor3 = Color3.new(1, 0, 0)
-			AllFrames.BackgroundTransparency = 0.5
-			AllFrames.LayoutOrder = 0
-			AllFrames.SizeConstraint =  Enum.SizeConstraint.RelativeXY
-		end
-	end
-	ESPBillboardUI = ESPUI
 	print("AIM VIEWER: FINISHING SETUP")
 	bootUpUI:Destroy()
 	MainUI.Parent = AimViewUI
@@ -179,8 +118,7 @@ local function startUp()
 	ActivateAVAll.Parent = MainUI
 	EnterUsername.Parent = MainUI
 	keybindReminder.Parent = MainUI
-	ESPStatus.Parent = MainUI
-	ESPButton.Parent = MainUI
+	
 	print("AIM VIEWER SETUP COMPLETE")
 	for i,TextLabels in pairs(MainUI:GetChildren()) do
 		if TextLabels:IsA("TextLabel") then
@@ -335,39 +273,6 @@ UserInputService.InputBegan:Connect(function(input)
 	end
 end)
 
-ESPToggleButton.MouseButton1Up:Connect(function()
-	if ESP == false then
-		for i,AllPlayers in pairs(Players:GetChildren()) do
-			if AllPlayers.Name ~= LocalPlayer.Name then
-				local TempUI = ESPBillboardUI:Clone()
-				local getPlrWorkspace = game.Workspace:FindFirstChild(AllPlayers.Name)
-				local Torso = getPlrWorkspace.Torso
-				if Torso then
-					TempUI.Parent = Torso
-					TempUI:WaitForChild("Username").Text = AllPlayers.Name
-				end
-			end
-		end
-		ESP = true
-	else
-		for i,AllPlayers in pairs(Players:GetChildren()) do
-			if AllPlayers.Name ~= LocalPlayer.Name then
-				print(AllPlayers, AllPlayers.Name)
-				local getPlrWorkspace = game.Workspace:FindFirstChild(AllPlayers.Name)
-				local Torso = getPlrWorkspace.Torso
-				if Torso then
-					local RemoveUi = Torso:FindFirstChild("ESPBillboardUi")
-					if RemoveUi then
-						RemoveUi:Destroy()
-					end
-				end
-
-				
-			end
-		end
-		ESP = false
-	end
-end)
 
 if KillSwitch == true then
 	activateKillSwitch()
