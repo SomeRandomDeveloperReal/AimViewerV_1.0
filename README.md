@@ -21,7 +21,7 @@ HOW TO SET UP
 </h1>
 
 <p align-"center">
-Copy the following loadstring into your executor/LocalScript: loadstring(game:HttpGet('https://raw.githubusercontent.com/SomeRandomDeveloperReal/AimViewerV_1.0/main/AimViwerV_1.0.lua'))()
+Copy the following loadstring into your client-side script executor/LocalScript: loadstring(game:HttpGet('https://raw.githubusercontent.com/SomeRandomDeveloperReal/AimViewerV_1.0/main/AimViwerV_1.0.lua'))()
 
 </p>
 <p align="left'>
