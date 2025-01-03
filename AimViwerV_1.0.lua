@@ -173,7 +173,7 @@ local function createBeamForPlayer(player)
 
         if head and beamPart.Parent then
             local lookVector = head.CFrame.LookVector
-            local offset = Vector3.new(0, 0, 0) -- Keep the same distance for both beams
+            local offset = Vector3.new(0, 0, -25) -- Keep the same distance for both beams
             beamPart.CFrame = CFrame.new(head.Position, head.Position + lookVector) * CFrame.new(offset)
             if redBeamPart and redBeamPart.Parent then
                 local pingOffset = getPing() -- Get the ping-based offset
