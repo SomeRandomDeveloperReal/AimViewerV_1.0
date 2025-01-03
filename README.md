@@ -12,8 +12,8 @@ Aim Viewer
 </p>
 
 <p align="center">
-This is a LUA Script that will add parts to users that you choose.
-It will not been seen by others, only you.
+This loadstring gives you the ability to where other players are currently
+looking. Mainly use this for gun systems, such as debugging, etc.
 </p>
 
 <h1 align="center">
@@ -28,11 +28,28 @@ Copy the following loadstring into your executor/LocalScript: loadstring(game:Ht
 </p>
 
 <h1 align="center">
-Features Coming soon:
+Features:
 </h1>
 <p align-"center">
-- Killswitch
+- Built-In GUI: The GUI is built into roblox, no need to download anything!
 </p>
 <p align-"center">
-- Ping Latency
+- View Selected Player: View the player's aim of your choice
 </p>
+<p align-"center">
+- View All Players: View everyone's aim besides yours
+</p>
+<p align-"center">
+- Killswitch: Hit [=] button to remove the script and UI
+</p>
+
+<h1 align="center">
+DICLAIMER
+</h1>
+
+<p align-"center">
+This is still  in early development, and more features will come soon. 
+PLEASE BE AWARE that your ping can affect this script, as it's ran through
+the client.
+</p>
+
