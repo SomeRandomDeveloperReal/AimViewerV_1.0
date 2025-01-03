@@ -178,7 +178,7 @@ local function createBeamForPlayer(player)
             if redBeamPart and redBeamPart.Parent then
                 local pingOffset = getPing() -- Get the ping-based offset
                 -- Offset the red beam laterally based on ping
-                redBeamPart.CFrame = CFrame.new(head.Position, head.Position + lookVector) * CFrame.new(offset + Vector3.new(pingOffset, 0, 0))
+                redBeamPart.CFrame = CFrame.new(head.Position, head.Position + lookVector) * CFrame.new(offset + Vector3.new(0, 0, 0))
             end
         else
             connection:Disconnect()
